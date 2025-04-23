@@ -1,0 +1,28 @@
+                         What will we learn?
+---------------------------------------------------------------------
+1. How to set cookies.
+2. How to use Bycrypt for password encryption and decryption.
+3. What is JWT? 
+4. How to extract JWT from data?
+5. How to send JWT with each request?
+---------------------------------------------------------------------
+
+
+                         Packages to install:
+--------------------------------------------------------------------- 
+1. jsonwebtoken
+2. bycrypt
+3. cookie-parser
+4. express
+5. mongoose
+---------------------------------------------------------------------
+
+
+                      How to encrypt using bcrypt 
+---------------------------------------------------------------------
+1. Generate a random string known as 'Salt'.
+2. Create a hash => change password into 'aant shantt characters'.
+3. Mix 'salt' with 'hash' 
+---------------------------------------------------------------------
+
+
