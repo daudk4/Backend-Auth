@@ -18,8 +18,27 @@ server.get('/', (req, res) => {
     res.render('index')
 })
 
-server.get('/read', (req, res) => {
-    res.send(req.cookies.name)
+server.post('/create', (req, res) => {
+    const { username, email, password, age } = req.body
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(password, salt, async (err, hash) => {
+            const createdUser = await userModel.create({
+                username,
+                email,
+                password: hash,
+                age
+            })
+
+            const token = jwt.sign({ email }, 'secretKey')
+            res.cookie('token', token)
+            res.send(createdUser)
+        })
+    })
+})
+
+server.get('/logout', (req, res) => {
+    res.cookie('token', "")
+    res.redirect('/')
 })
 
 
